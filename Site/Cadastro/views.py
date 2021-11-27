@@ -8,3 +8,7 @@ def init(request):
     clientview = Cliente.objects.all()
 
     return render(request,'init.html')
+
+def cliente(request):
+
+    return  render(request,'clientes.html')
