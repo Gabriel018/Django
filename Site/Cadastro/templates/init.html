@@ -1,26 +1,30 @@
 
 <html lang="en">
+<head>
+    {% block title%}<title>Loja do Bugs</title>{% endblock %}
+<style>
+    .abc{background-color: cadetblue;text-align: left}
+    .link{color: black; font-family: Arial;}
+
+</style>
+
+</head>
 
 <header>
-{% block title%}<title>Loja do Bugs</title>{% endblock %}
 
-  <div align="center" class="container-sm">
-      <h1>Bem vindo a loja do bug</h1>
-      <p class="">Maior e melhor lojar</p>
+  <div class="abc" align="center" class="container-sm">
+      <h1 style="text-align: center">Bem vindo a loja do bug</h1>
+
+      <a href="" class="link"> Home</a>
+      <a href="" class="link">Clientes</a>
+      <a href="" class="link">Produtos</a>
+      <a href="" class="link">Contato</a>
+
   </div>
-
     </header>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    {% load static %}
-   <body>
-   {% block sidebar %}
-    <ol class="">
-    <li><a href="{% url 'clientes' %}">Clientes</a></li>
-     <li><a href="{% url 'init' %}">Home</a> </li>
-    <li> <a href="">Cadastrar</a></li>
 
-   {% endblock %}
-  </ol>
+   <body>
+
   <div align="center">{% block content %}{% endblock %}</div>
 
   </body>
