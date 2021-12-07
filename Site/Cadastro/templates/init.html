@@ -5,7 +5,7 @@
 <style>
     .abc{background-color: cadetblue;text-align: left}
     .link{color: black; font-family: Arial;}
-
+     #cli{font-family: Arial  }
 </style>
 
 </head>
@@ -15,11 +15,12 @@
   <div class="abc" align="center" class="container-sm">
       <h1 style="text-align: center">Bem vindo a loja do bug</h1>
 
+   {% block sidebar %}
       <a href="" class="link"> Home</a>
-      <a href="" class="link">Clientes</a>
-      <a href="" class="link">Produtos</a>
+      <a href="{% url 'clientes' %}" class="link">Clientes</a>
+      <a href="{% url 'produtos' %}" class="link">Produtos</a>
       <a href="" class="link">Contato</a>
-
+      {% endblock %}
   </div>
     </header>
 
