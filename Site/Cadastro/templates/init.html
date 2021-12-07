@@ -1,33 +1,13 @@
 
-<html lang="en">
-<head>
-    {% block title%}<title>Loja do Bugs</title>{% endblock %}
-<style>
-    .abc{background-color: cadetblue;text-align: left}
-    .link{color: black; font-family: Arial;}
-     #cli{font-family: Arial  }
-</style>
+{% extends 'model-page.html' %}
 
-</head>
 
-<header>
+{% block content %}
+<div>
+    <h3>Clientes</h3>
+ {% for cliente in clientes %}
+     <li> <a style="font-size:  16px">{{ cliente.nome}}</a> </li>
+       {% endfor %}
+</div>
 
-  <div class="abc" align="center" class="container-sm">
-      <h1 style="text-align: center">Bem vindo a loja do bug</h1>
-
-   {% block sidebar %}
-      <a href="" class="link"> Home</a>
-      <a href="{% url 'clientes' %}" class="link">Clientes</a>
-      <a href="{% url 'produtos' %}" class="link">Produtos</a>
-      <a href="" class="link">Contato</a>
-      {% endblock %}
-  </div>
-    </header>
-
-   <body>
-
-  <div align="center">{% block content %}{% endblock %}</div>
-
-  </body>
-
-</html>
+{% endblock %}

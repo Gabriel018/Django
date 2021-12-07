@@ -10,22 +10,19 @@ def init(request):
     return render(request,'init.html')
 
 def cliente(request):
-    clientview = Cliente.objects.all().count()
+    cliente = Cliente.objects.all()
 
-    context = {
-        'clientview': clientview,
+    dados = {'clientes': cliente, }
 
-    }
-
-    return  render(request,'clientes.html',context=context)
+    return  render(request,'init.html',dados)
 
 
 def produto(request):
     produtoview = Produtos.objects.all().count()
 
-    context1 = {
+    context = {
         'produtoview': produtoview
 
     }
 
-    return  render(request,'produtos.html',context=context1)
+    return  render(request,'model-header.html',context=context)
