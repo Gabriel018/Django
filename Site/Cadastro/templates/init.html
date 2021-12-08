@@ -3,11 +3,13 @@
 
 
 {% block content %}
-<div>
+<div style="font-size: 20px">
     <h3>Clientes</h3>
  {% for cliente in clientes %}
-     <li> <a style="font-size:  16px">{{ cliente.nome}}</a> </li>
-       {% endfor %}
+     <li> <b style="font-size:  14px">{{ cliente.nome}} {{ cliente.email }}
+         <a href="client_cad/delete/{{cliente.id}}"> Excluir</a>
+         /<a href="client_cad/?id={{cliente.id}}"> Editar</a></b> </li>
+    {% endfor %}
 </div>
 
 {% endblock %}

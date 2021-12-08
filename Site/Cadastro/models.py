@@ -5,20 +5,16 @@ import uuid
 # Create your models here.
 
 class Cliente(models.Model):
-    objects = None
-    id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True,blank=True)
     nome = models.CharField(max_length=200)
     idade = models.CharField(max_length= 200)
-    genero = (('M', 'Masculino'),
-             ('F','Feminino'))
-    sexo  = models.CharField(max_length=20,choices=genero)
+    email = models.CharField(max_length=200)
+
 
     def __str__(self):
         return self.nome
 
-
     def get_absolute_url(self):
-        """Returns the url to access a detail record for this book."""
         return reverse(f'{self.nome}')
 
 
