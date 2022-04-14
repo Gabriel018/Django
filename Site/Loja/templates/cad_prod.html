@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Cadastrar produto</h2>
-<form action="add" method="post">
+<form action="add_record" method="post">
     {% csrf_token %}
 
     <h1>Descriçao</h1>
@@ -14,6 +14,7 @@
     <br>
     <h2>Quantidade</h2>
     <input name='Quant'>
+
     <input type="submit" value="Submit">
 
 </form>

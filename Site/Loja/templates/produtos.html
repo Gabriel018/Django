@@ -10,12 +10,14 @@
 <h1>Produtos na loja</h1>
 <tr>
   {% for x in Produtos %}
-  <td> {{x.id}}</td>
-<td>{{x.Desc}} </td>
-<td>Quantidade {{x.Quant}}</td>
+
+    <td> {{x.id}}</td>
+    <td>{{x.Desc}} </td>
+    <td>Quantidade {{x.Quant}}</td>
+    <td><a href="delete/{{ x.id }}">Excluir</a></td>
 </tr>
 {% endfor %}
 </table>
-<button type="button" class="btn btn-light"><a href="">Cadastrar</a></button>
+<button type="button" class="btn btn-light"><a href="{% url 'add' %}">Cadastrar</a></button>
 </body>
 </html>
