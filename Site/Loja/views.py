@@ -6,11 +6,18 @@ from .models import produto
 # Create your views here.
 
 def home(request):
+    Produtos = produto.objects.all().values()
+    template = loader.get_template('index.html')
+    context = {
+        'Produtos':Produtos,
+    }
+    return HttpResponse(template.render(context,request))
 
-    """template = loader.get_template('index.html')
-    return HttpResponse(template.render())"""
 
+def produtos(request):
+    template = loader.get_template('produtos.html')
+    return  HttpResponse(template.render({},request))
 
-    Protudos = produto.objects.all().values()
-
-    return HttpResponse(Protudos)
+def add(request):
+    template  = loader.get_template('cad_prod.html')
+    return HttpResponse(template.render({},request))
