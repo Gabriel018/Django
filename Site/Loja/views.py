@@ -28,10 +28,31 @@ def add_record(request):
 
     prod = produto(Desc=x,Quant=y)
     prod.save()
-    return HttpResponseRedirect('produtos')
+    return HttpResponseRedirect(reverse('produtos'))
 
 def delete(request, id):
     Produtos  = produto.objects.get(id=id)
     Produtos.delete()
-    return HttpResponse('Excluido com sucesso')
 
+    return HttpResponseRedirect(reverse('home'))
+
+def update(request,id):
+    Produtos = produto.objects.get(id=id)
+    template = loader.get_template('up_prod.html')
+    context = {
+        'Produtos':Produtos,
+    }
+
+    return  HttpResponse(template.render(context,request))
+
+
+def update_record(request,id):
+    Descricao = request.POST['Desc']
+    Quantidade = request.POST['Quant']
+
+    Prod = produto.objects.get(id=id)
+    Prod.Desc = Descricao
+    Prod.Quant = Quantidade
+    Prod.save()
+
+    return HttpResponseRedirect(reverse('produtos'))

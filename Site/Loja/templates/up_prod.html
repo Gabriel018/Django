@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<h3>Alterar produto</h3>
+<form action="update_record/{{Produtos.id}}" method="post">
+    {% csrf_token %}
+        <h1>Descriçao</h1>
+    <input name="Desc" value="{{Produtos.Desc}}">
+    <br>
+    <h2>Quantidade</h2>
+    <input name='Quant' value="{{Produtos.Quant}}">
+
+    <input type="submit" value="Submit">
+
+
+</form>
+</body>
+</html>
